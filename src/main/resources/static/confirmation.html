@@ -66,17 +66,19 @@ span.psw {
 }
 </style>
     <script>
-        window.onload = function () {
-    var url = document.location.href,
+    window.onload = function () {
+        var url = document.location.href,
         params = url.split('?')[1].split('&'),
         data = {}, tmp;
     for (var i = 0, l = params.length; i < l; i++) {
          tmp = params[i].split('=');
          data[tmp[0]] = tmp[1];
     }
+
     document.getElementById('account').value = data.account;
     document.getElementById('amount').value = data.amount;
-}
+
+    }
     </script>
 </head>
 <body>
@@ -98,14 +100,14 @@ span.psw {
         <input type="text" value="5512678891" placeholder="Enter Username" name="source" disabled>
 
         <label> <b>Target Account No</b></label>
-        <input type="text" id="account" placeholder="Enter Target Account Number" name="account" disabled>
+        <input type="text" id="account" placeholder="Enter Target Account Number" name="account">
 
         <label> <b>Amount(USD)</b></label>
-        <input type="text"  id="amount" placeholder="Enter Amount Required to Transfer" name="amount" disabled>
+        <input type="text"  id="amount" placeholder="Enter Amount Required to Transfer" name="amount">
 
 
 
-        <button type="submit">Transfer</button>
+        <button type="submit">Confirm Transfer</button>
 
     </div>
 
@@ -114,6 +116,7 @@ span.psw {
 
         <span class="imgcontainer">(C) 2023 EnrichBank Systems</span>
     </div>
+
 </form>
 
 </body>
