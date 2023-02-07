@@ -81,7 +81,22 @@ span.psw {
     }
     document.getElementById('account').value = data.account;
     document.getElementById('amount').value = data.amount;
-    document.getElementById('datetime').value = Date();
+    var date = Date()
+    document.getElementById('datetime').value = date;
+
+    var url = "http://localhost:8080/funds/transfer";
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+        transactionID:"87354",
+        name:"Alex Mona",
+        sourceAccount:"5512678891",
+        targetAccount:data.account,
+        amount:data.amount,
+        dateTime:date
+    }));
 
 
 }
